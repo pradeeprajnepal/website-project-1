@@ -1186,13 +1186,13 @@ the website, in dark theme
   border: none;
   background-color:var(--first-color-light);
   padding: 10px 20px;
-  color:var(--first-color-light)
+  color:var(--title-color);
   cursor: pointer;
   display: inline-flex;
 }
 
 .checkout:hover{
-  color:white;
+  color:white
 }
 
 .hidden {
