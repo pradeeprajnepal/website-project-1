@@ -127,6 +127,19 @@ body.dark-theme{
   cursor: pointer;
 }
 
+.cart__toggle{
+  color: var(--title-color);
+  display: inline-flex;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width:768px){
+  .cart__toggle{
+    margin-right: 1.25rem;
+  }
+}
+
 .nav__btns{
   display: inline-flex;
   align-items: center;
@@ -203,7 +216,8 @@ the website, in dark theme
 
 .nav__logo,
 .nav__toggle,
-.nav__close{
+.nav__close,
+.cart__close{
   color: var(--title-color);
 }
 
@@ -232,11 +246,58 @@ the website, in dark theme
   cursor: pointer;
 }
 
+.cart__menu{
+  position: fixed;
+  background-color: var(--container-color);
+  width: 40%;
+  height: 100%;
+  top: 0;
+  right: -100%;
+  box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, .1);
+  padding: 4rem 0 0 3rem;
+  border-radius: 1rem 0 0 1rem;
+  transition: .6s;
+  z-index: var(--z-fixed);
+  float: left;
+  overflow-y: auto;
+}
+.cart__close{
+  font-size: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  cursor: pointer;
+}
+.cart__dot{
+  position: absolute;
+  font-size: .8rem;
+  margin: -.3rem 0 0 .8rem;
+  display:none;
+}
+
+.show__dot{
+  display: inline-flex;
+}
+
 @media screen and (max-width: 767px){
   .nav__menu{
     position: fixed;
     background-color: var(--container-color);
     width: 80%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, .1);
+    padding: 4rem 0 0 3rem;
+    border-radius: 1rem 0 0 1rem;
+    transition: .3s;
+    z-index: var(--z-fixed);
+  }
+
+  .cart__menu{
+    position: fixed;
+    background-color: var(--container-color);
+    width: 60%;
     height: 100%;
     top: 0;
     right: -100%;
@@ -255,6 +316,8 @@ the website, in dark theme
   right: 1.25rem;
   cursor: pointer;
 }
+
+
 
 .nav__list{
   display: flex;
@@ -503,6 +566,7 @@ the website, in dark theme
 .product__card{
   display: grid;
   position: relative;
+  cursor: pointer;
 }
 
 .product__img{
@@ -931,6 +995,10 @@ the website, in dark theme
     margin-left: auto;
   }
 
+  .cart__menu{
+    margin-left: auto;
+  }
+
   .home__container,
   .about__container,
   .questions__container,
@@ -1074,4 +1142,64 @@ the website, in dark theme
   .scrollup{
     right: 3rem;
   }
+}
+
+/*============CART CSS==============*/
+
+
+.buyItem {
+  border-bottom: #aaa 1px solid;
+  width: 80%;
+  padding: 10px 0;
+  display: inline-flex;
+  color: var(--text-color);
+ }
+
+@media screen and (max-width:415px){
+  .buyItem{
+    display:flex;
+    flex-direction:column;
+  }
+}
+
+.buyItem button {
+  background: transparent;
+  color: var(--title-color);
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 1.2rem;
+  padding: 0 6px;
+  border: none;
+}
+
+.buyItem button:active {
+  color: #96c8cc;
+}
+
+.buyItem > div {
+  padding: 10px 10px;
+}
+
+.checkout {
+  font-size: 1.25rem;;
+  margin: 20px auto;
+  border: none;
+  background-color:var(--first-color-light);
+  padding: 10px 20px;
+  color:var(--first-color-light)
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.checkout:hover{
+  color:white;
+}
+
+.hidden {
+  display: none;
+}
+
+.empty {
+  justify-self: center;
+  margin: 150px auto;
 }
